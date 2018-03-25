@@ -27,7 +27,13 @@ You're reading it! Below I describe how I addressed each rubric point and where 
 ### Explain the Starter Code
 
 #### 1. Explain the functionality of what's provided in `motion_planning.py` and `planning_utils.py`
-These scripts contain a basic planning implementation that includes...
+These scripts contain a basic planning implementation that includes python definitions in the main module called plan_path() in the motion_planning.py file. Utility modules that used often are stored in the planning_utils.py, which is then imported into motion_planning.py
+
+The starter code reads the obstacle map file called collider.csv, and runs a simple path from the center of the map to 10 + north, 10 + east destination. This is how the starter code runs.
+
+As can be seen, the drone flies in a zig-zag fashion in a grid-based A* seach algorithm. The zig-zag can be smoothed out by pruning the path using the collinearity check algorithm. The result is shown here.
+
+After running the exploring the starter code, I am ready to build my own path planning algorithm that I have learnt from the class, as will be described next.
 
 And here's a lovely image of my results (ok this image has nothing to do with it, but it's a nice example of how to include images in your writeup!)
 ![Top Down View](./misc/high_up.png)
