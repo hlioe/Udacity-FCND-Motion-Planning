@@ -49,6 +49,7 @@ The graph based solution is using Voronoi algorithm to provide the cells. The cr
 Using the import from networkx, the graph is created from the Voronoi edges by G.add_edge() method. This is shown in the python code below.
 
 G = nx.graph()
+
 for e in edges:
   p1 = e[0]
   p2 = e[1]
@@ -60,7 +61,10 @@ For the final step I use a collinearity test to prune my path of unnecessary way
 
 ### Execute the flight
 #### 1. Does it work?
-It does work! However, care must be taken as to not set the goal position to be off map. In this case, there will be an erro message to find a path.
+It does work! However, care must be taken as to not set the goal position to be off map. In this case, there will be an erro message to find a path. As a guide, I use the plot on the right bottom for the drone to follow.
+
+![path_plot](./path_plot_to_follow.png)
+
 
 ### Double check that you've met specifications for each of the [rubric](https://review.udacity.com/#!/rubrics/1534/view) points.
   
