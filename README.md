@@ -7,7 +7,6 @@
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
-### Writeup / README
 
 ### Explain the Starter Code
 
@@ -21,14 +20,14 @@ The starter code reads in the obstacle map, runs a simple path from the center o
 As can be seen from running the starter code without any modification, the drone flies in a zig-zag fashion from the A* seach algorithm. The zig-zag can be smoothed out by pruning the path using `collinearity` algorithm. The result is shown here.
 ![ZigZag effect](./zigzag.png)
 
-After exploring the starter code, I am ready to build my own path planning algorithms that I have learnt from class. I will provide 2 solutions, one for the basic requirement, whihc is a `grid-based` A* path, and second a `graph-based` A* path planning algorithms. They are provided in two zip files `Grid_based_search.tgz` and `Graph_based_search.tgz`
+After exploring the starter code, I am ready to build my own path planning algorithms that I have learnt from class. I will provide 2 solutions, one for the basic requirement, which is a `grid-based` A* path, and second a `graph-based` A* path planning algorithms. They are provided in two zip files `Grid_based_search.tgz` and `Graph_based_search.tgz`
 
-### Implementing Your Path Planning Algorithm
+### Implementing My Path Planning Algorithm
 
-#### 1. Set your global home position
+#### 1. Set my global home position
 First we need to set the global home position. The position is provided in the first line of the `colliders.csv` file. To read only the first line of the `colliders.csv` file in order to retrieve the home position, I created a module definition called `readrow0()`. The latitude, and longitude is then passed to the self.set_home_position() method to set the global home position.
 
-#### 2. Set your current local position
+#### 2. Set my current local position
 
 Next, we need to know our current local position in NED format relative to global home. Once the global home position and the current global position is known, the NED current local position can be calculated from the global_to_local() method.
 
