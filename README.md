@@ -36,9 +36,9 @@ Next, we need to know our current local position in NED format relative to globa
 The grid starting position can be then be provided from the current position relative to the map center.
 
 #### 4. Set grid goal position from geodetic coords
-This step is to add flexibility to the desired goal location. Should be able to choose any (lat, lon) within the map and have it rendered to a goal location on the grid.
+This step is to add flexibility to the desired goal location. I should be able to choose any (lat, lon) within the map and have it rendered to a goal location on the grid.
 
-Similarly, the grid_goal position can be calculated from any ( lat, lon ) within the map.
+In other words, the grid_goal desired position can be calculated from any ( lat, lon ) within the map. For the current setting, it is hard to know if we are off map. I provided a plot of the path in png file that can be used as a guide.
 
 #### 5. Modify A* to include diagonal motion (or replace A* altogether)
 
@@ -56,11 +56,11 @@ for e in edges:
   G.add_edge (p1, p2, weigh=dist)
 
 #### 6. Cull waypoints 
-For the final step I use a collinearity test to prune my path of unnecessary waypoints. 
+For the final step I use a collinearity test to prune my path of unnecessary waypoints. For the collinearity test, I set the epsilon to be 1 meter squared. I think this is one of a better value to use. But, further optimization of the path can be done in the future.
 
 ### Execute the flight
 #### 1. Does it work?
-It works!
+It does work! However, care must be taken as to not set the goal position to be off map. In this case, there will be an erro message to find a path.
 
 ### Double check that you've met specifications for each of the [rubric](https://review.udacity.com/#!/rubrics/1534/view) points.
   
