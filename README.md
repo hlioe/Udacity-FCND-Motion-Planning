@@ -34,6 +34,7 @@ The main of the program is called `plan_path()` resides in the `motion_planning.
 The starter code reads in the obstacle map, runs a simple path from the center of the map (-`north_offset`, -`east_offset`), to (-`north_offset` - 10, -`east_offset` - 10). It then defines a grid for a particular altitude and safety margin around obstacles. It finally utilizes the A* search algorithm to find the optimum path from start to goal.
 
 As can be seen from running the starter code without any modification, the drone flies in a zig-zag fashion from the A* seach algorithm. The zig-zag can be smoothed out by pruning the path using `collinearity` algorithm. The result is shown here.
+![ZigZag effect](./zigzag.png)
 
 After exploring the starter code, I am ready to build my own path planning algorithms that I have learnt from class. I will provide 2 solutions, one for the basic requirement, whihc is a `grid-based` A* path, and second a `graph-based` A* path planning algorithms. 
 
