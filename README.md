@@ -27,13 +27,15 @@ You're reading it! Below I describe how I addressed each rubric point and where 
 ### Explain the Starter Code
 
 #### 1. Explain the functionality of what's provided in `motion_planning.py` and `planning_utils.py`
-These scripts contain a basic planning implementation that includes python definitions in the main module called plan_path() in the motion_planning.py file. Utility modules that used often are stored in the planning_utils.py, which is then imported into motion_planning.py
+These scripts contain a basic planning implementation that includes python definitions in two files, `motion_planning.py` and the `planning_utility.py`.
 
-The starter code reads the obstacle map file called collider.csv, and runs a simple path from the center of the map to 10 + north, 10 + east destination. This is how the starter code runs.
+The main of the program is called `plan_path()` resides in the `motion_planning.py`. It starts by reading the latitude and longitude of the home location in floating points from the external 2.5D `colliders.csv` map file.
 
-As can be seen, the drone flies in a zig-zag fashion in a grid-based A* seach algorithm. The zig-zag can be smoothed out by pruning the path using the collinearity check algorithm. The result is shown here.
+The starter code reads in the obstacle map, runs a simple path from the center of the map (-`north_offset`, -`east_offset`), to (-`north_offset` - 10, -`east_offset` - 10). It then defines a grid for a particular altitude and safety margin around obstacles. It finally utilizes the A* search algorithm to find the optimum path from start to goal.
 
-After running the exploring the starter code, I am ready to build my own path planning algorithm that I have learnt from the class, as will be described next.
+As can be seen from running the starter code without any modification, the drone flies in a zig-zag fashion from the A* seach algorithm. The zig-zag can be smoothed out by pruning the path using `collinearity` algorithm. The result is shown here.
+
+After exploring the starter code, I am ready to build my own path planning algorithms that I have learnt from class. I will provide 2 solutions, one for the basic requirement, whihc is a `grid-based` A* path, and second a `graph-based` A* path planning algorithms. 
 
 And here's a lovely image of my results (ok this image has nothing to do with it, but it's a nice example of how to include images in your writeup!)
 ![Top Down View](./misc/high_up.png)
